@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node * insert_beg(); 
+struct node * insert_end(); 
+void display();
+struct node
+{
+int data;
+struct node *next;
+};
+struct node *start=NULL;
+
+void main()
+{
+int ch; clrscr(); 
+while(1)
+{
+printf("\n ***LINKLIST MENU***"); 
+printf("\n\n1.insert_beg\n2. insert_end \n 3. display\n4.exit"); 
+printf("\n\n enter your choice (1 2 3 or 4)"); 
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:start=insert_beg(); break;
+case 2:start=insert_end(); break;
+case 3:display(); break;
+case 4:exit(0);
+break;
+ default:printf("\nwrong coice!");
+break;
+}
+}
+ 
+getch();} 
+struct node * insert_beg()
+{
+struct node *new_node;
+int val;
+new_node=(struct node*)(malloc(sizeof(struct node))); printf("Enter an element:");
+scanf("%d",&val);
+new_node->data=val; new_node->next=start; start=new_node;
+return start;}
+
+
+struct node * insert_end()
+{
+struct node *new_node,*ptr;
+int val,i=1;
+new_node=(struct node*)(malloc(sizeof(struct node))); 
+printf("Enter an element:");
+scanf("%d",&val);
+new_node->data=val; 
+new_node->next=NULL;
+ptr=start;
+if(start==NULL)	//if link list is empty
+{	
+start=new_node;
+}
+ else
+{
+while(ptr->next!=NULL)
+{	
+ptr=ptr->next;	
+}
+ptr->next=new_node;
+}
+return start; 
+}
+void display()
+{	
+struct node *ptr;
+ptr=start;
+while(ptr!=NULL)
+{
+printf("\nelement is %d",ptr->data); 
+ptr=ptr->next;
+} 
+}
+
