@@ -21,8 +21,9 @@ int main()
         printf("\n\n---- Singly Linked List(SLL) Menu ----");
         printf("\n1.Insert at beginning\n2.Delete at beginning\n3.Display\n4.Exit\n\n");
         printf("Enter your choice(1-4):");
-        scanf("%d",&ch);
- 
+        scanf("%d",&ch);	
+	    
+	//Switch
         switch(ch)
         {
             case 1: insert_beg();
