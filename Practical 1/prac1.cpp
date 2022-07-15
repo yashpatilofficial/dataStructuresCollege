@@ -56,7 +56,7 @@ printf("Stack is empty!!");
 }
 else
 {
-printf("Deleted element is %d",stack[top]); top=top-1;
+ printf("Deleted element is %d",stack[top]); top=top-1;
 }
 }
 void display()
